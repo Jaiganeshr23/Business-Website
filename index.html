@@ -16,9 +16,31 @@
       font-family: 'Roboto', sans-serif;
     }
     .transition-section {
-      transition: all 0.5s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .transition-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    .popup {
+      animation: fadeInScale 0.4s ease forwards;
+    }
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    img:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
     }
   </style>
+  
 </head>
 <body class="bg-white text-black">
   <!-- Navbar -->
@@ -80,12 +102,13 @@
       </div>
     </div>
     <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
-      <div class="bg-white p-6 rounded-lg max-w-md text-center">
+      <div class="bg-white p-6 rounded-lg max-w-md text-center popup">
         <h3 id="details-title" class="text-2xl font-bold mb-4">Detail Title</h3>
         <p>More information coming soon...</p>
         <button onclick="closeDetails()" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Close</button>
       </div>
     </div>
+    
   </section>
 
   <!-- Gym Section -->
@@ -132,9 +155,12 @@
     </div>
     <div>
       <h4 class="font-bold">Contact</h4>
+      <p class="mt-2 font-semibold">Mr. Maran<br><span class="text-sm">Advanced Physique Transformation Expert</span></p>
       <p class="mt-2">pulivalam, Thiruvarur - 610109<br>P: +91 97513 51156<br>E: a</p>
       <p class="mt-2">Mannarkudi - 610109<br>P: +91 97513 51156<br>E: a</p>
+      
     </div>
+    
   </div>
   <div class="text-center mt-6 text-sm">&copy; 2025 Battle Fitness Unisex Gym. Designed by Jaiganesh.</div>
 </footer>
