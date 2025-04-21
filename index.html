@@ -9,61 +9,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    .transition-section {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .transition-section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    }
-    .popup {
-      animation: fadeInScale 0.4s ease forwards;
-    }
-    @keyframes fadeInScale {
-      0% {
+    @keyframes fadeUp {
+      from {
         opacity: 0;
-        transform: scale(0.7);
+        transform: translateY(20px);
       }
-      100% {
+      to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
       }
     }
-    img:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
+  
+    .fade-up {
+      animation: fadeUp 0.8s ease-out both;
+    }
+  
+    .fade-delay-1 {
+      animation-delay: 0.2s;
+    }
+  
+    .fade-delay-2 {
+      animation-delay: 0.4s;
+    }
+  
+    .fade-delay-3 {
+      animation-delay: 0.6s;
+    }
+  
+    .fade-delay-4 {
+      animation-delay: 0.8s;
     }
   </style>
+  
   
 </head>
 <body class="bg-white text-black">
   <!-- Navbar -->
-  <header class="fixed w-full z-50 bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-red-600">Battle Fitness Unisex Gym</h1>
-      <nav class="hidden md:flex space-x-6 text-lg">
-        <a href="#services" class="hover:text-red-600">Services</a>
-        <a href="#gym" class="hover:text-red-600">Gym</a>
-        <a href="#franchise" class="hover:text-red-600">Franchise</a>
-        <a href="#contact" class="hover:text-red-600">Contact</a>
-      </nav>
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-2xl">☰</button>
-      </div>
+<header class="fixed w-full z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-red-600">Battle Fitness Unisex Gym</h1>
+    <nav class="hidden md:flex space-x-6 text-lg">
+      <a href="#about" class="hover:text-red-600">About Us</a> <!-- Added -->
+      <a href="#services" class="hover:text-red-600">Services</a>
+      <a href="#gym" class="hover:text-red-600">Gym</a>
+      <a href="#franchise" class="hover:text-red-600">Franchise</a>
+      <a href="#contact" class="hover:text-red-600">Contact</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl">☰</button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
-      <a href="#services" class="block text-lg">Services</a>
-      <a href="#gym" class="block text-lg">Gym</a>
-      <a href="#franchise" class="block text-lg">Franchise</a>
-      <a href="#contact" class="block text-lg">Contact</a>
-    </div>
-  </header>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+    <a href="#about" class="block text-lg">About Us</a> <!-- Added -->
+    <a href="#services" class="block text-lg">Services</a>
+    <a href="#gym" class="block text-lg">Gym</a>
+    <a href="#franchise" class="block text-lg">Franchise</a>
+    <a href="#contact" class="block text-lg">Contact</a>
+  </div>
+</header>
 
  <!-- Hero Section -->
 <section class="relative min-h-screen bg-cover bg-center text-white flex items-center justify-center px-4" style="background-image: url('./gym Background 1.jpg');">
@@ -73,12 +76,38 @@
       Become the <span class="text-red-600">Strongest</span> Version of Yourself at <span class="text-red-600">Battle Fitness</span>
     </h2>
     <p class="mt-6 text-lg md:text-xl">Train Hard. Stay Consistent. Level Up.</p>
+
+  </div>
+  
+</section>
+<!-- About Us Section -->
+<section id="about" class="py-12 px-4 bg-white text-center md:text-left">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-red-600 mb-6">About Us</h2>
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-4">
+      Welcome to <span class="font-semibold text-black">Battle Fitness A/C</span> – not just a gym, but a <span class="text-red-600 font-semibold">way of life</span>.
+      We are recognized as a <span class="text-red-600 font-semibold">premium fitness destination</span> that promotes a healthy lifestyle.
+    </p>
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-4">
+      Based in <span class="font-medium">Thiruvarur and Mannarkudi</span>, we’re one of the <span class="text-red-600 font-semibold">top fitness centers</span>, offering 
+      exclusive training programs designed to help you transform your body and mind.
+    </p>
+    <ul class="text-lg md:text-xl text-gray-800 list-disc pl-6 mb-4">
+      <li><span class="font-semibold text-black">Functional Training</span> sessions for real-world strength</li>
+      <li><span class="font-semibold text-black">Fitness Boot Camps</span> to build endurance and motivation</li>
+      <li><span class="font-semibold text-black">Body Transformation</span> programs tailored to your goals</li>
+      <li><span class="font-semibold text-black">Weight Loss & Gain</span> with expert nutrition and guidance</li>
+    </ul>
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">
+      Our mission is to deliver the <span class="text-red-600 font-semibold">best fitness experience</span> under the guidance of 
+      <span class="font-semibold">qualified and experienced professionals</span>. Join us and be part of a growing 
+      fitness movement across the city.
+    </p>
   </div>
 </section>
 
-
   <!-- Services Section -->
- <section id="services" class="py-12 bg-gray-100">
+  <section id="services" class="py-12 bg-gray-100">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
       <div class="transition-section bg-black text-white p-6 rounded-xl shadow-xl">
         <h3 class="text-xl font-bold">Functional Training</h3>
